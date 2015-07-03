@@ -1,14 +1,14 @@
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.swing.JPanel;
 
 
 public class Square {
 		
 	private int colour;
-	private JPanel panel;
+	private JPanel square;
+	private int value;
 		
 	private static final Map<Integer, Color> colourMap;
 	static {
@@ -19,15 +19,20 @@ public class Square {
 		colourMap.put(FibonacciClock.BOTH, Color.BLUE);
 	}
 	
-	public Square(int colour, JPanel panel) {
+	public Square(int colour, JPanel square, int value) {
 		this.colour = colour;
-		this.panel = panel;
-		panel.setBackground(colourMap.get(colour));
+		this.square = square;
+		this.value = value;
+		square.setBackground(colourMap.get(colour));
+	}
+	
+	public int getValue() {
+		return value;
 	}
 	
 	public void setColour(int colour) {
 		this.colour = colour;
-		panel.setBackground(colourMap.get(colour));
+		square.setBackground(colourMap.get(colour));
 	}
 	
 	public int getColour() {
